@@ -1,0 +1,167 @@
+<xml xmlns="https://developers.google.com/blockly/xml">
+  <variables>
+    <variable id="374@x`Ie9EFQj%48l#Jg">user</variable>
+    <variable id="HSc[:CIC:cKz:b%-Am3L">materiale</variable>
+  </variables>
+  <block type="s4d_login" id="Id_$_;fgQmtS;8c3Rv%}" x="866" y="333">
+    <value name="TOKEN">
+      <block type="text" id="B;GI`v}WUO^%YCWE6hZA">
+        <field name="TEXT">MTAwMjUwNzg0NjE5OTU0NTkyNg.GJk2zS.dRpwHM7BXm4tsm_tIVlNu36dZ_vJldoprfwSMA</field>
+      </block>
+    </value>
+  </block>
+  <block type="s4d_on_message" id="GD9)JEg!V3C`jg.7]{c%" x="354" y="378">
+    <statement name="STATEMENTS">
+      <block type="controls_if" id="IULyA5u`rFD4{#6%T)OZ">
+        <value name="IF0">
+          <block type="logic_compare" id="FCa.yB:48nw]}=3uKJJK">
+            <field name="OP">EQ</field>
+            <value name="A">
+              <block type="s4d_message_channel" id="OyQ{uipf^rlSVd4ucKsR"></block>
+            </value>
+            <value name="B">
+              <block type="s4d_get_channel" id="(Yy$RA|M6r~{}HfP!`$A">
+                <field name="SEARCH_TYPE">ID</field>
+                <value name="VALUE">
+                  <block type="text" id="xBChIAG]~[gdAw2.ZFY^">
+                    <field name="TEXT">1003588867452055562</field>
+                  </block>
+                </value>
+              </block>
+            </value>
+          </block>
+        </value>
+        <statement name="DO0">
+          <block type="controls_if" id="IV#TcZw.=US=3ziZxxg-">
+            <value name="IF0">
+              <block type="s4d_starts_with" id="]3^$Bh#;v{//e{6yolc1">
+                <value name="STRING">
+                  <shadow type="text" id="%PH;ZDF{wb+_7Ob;[Tnn">
+                    <field name="TEXT">abc</field>
+                  </shadow>
+                  <block type="s4d_message_content" id="tgqmZxvuJS6Wc]XJ^ZJK"></block>
+                </value>
+                <value name="SUBSTRING">
+                  <shadow type="text" id="iCDAqmXP[89-,.JB?6_A">
+                    <field name="TEXT">/request</field>
+                  </shadow>
+                </value>
+              </block>
+            </value>
+            <statement name="DO0">
+              <block type="s4d_add_reaction" id="7=cjz?c#8t`+cVjPhsr+">
+                <value name="REACTION">
+                  <shadow type="text" id="%3j(U*z*%TqE4`0DlZh=">
+                    <field name="TEXT">👍</field>
+                  </shadow>
+                </value>
+                <next>
+                  <block type="variables_set" id="Yqt_$68M_Ad0(%-rsk.j">
+                    <field name="VAR" id="374@x`Ie9EFQj%48l#Jg">user</field>
+                    <value name="VALUE">
+                      <block type="s4d_message_author_raw" id="a;nL!4Lubee1G71qC#1I">
+                        <field name="SEARCH_TYPE">USERNAME</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="variables_set" id="/ARxSwPiA`lw_,-%fDQT">
+                        <field name="VAR" id="HSc[:CIC:cKz:b%-Am3L">materiale</field>
+                        <value name="VALUE">
+                          <block type="text_getSubstring" id="e,vL)sMY|DYzn)!l%K.[">
+                            <mutation at1="true" at2="true"></mutation>
+                            <field name="WHERE1">FROM_START</field>
+                            <field name="WHERE2">FROM_START</field>
+                            <value name="STRING">
+                              <block type="s4d_message_content" id="%?))P:(M.{WM2ZAE_o81"></block>
+                            </value>
+                            <value name="AT1">
+                              <block type="math_number" id="Fz-,wnwzTHpgs}sH;pJD">
+                                <field name="NUM">9</field>
+                              </block>
+                            </value>
+                            <value name="AT2">
+                              <block type="text_length" id="M6*28_9z4m%Gh?*}5L*u">
+                                <value name="VALUE">
+                                  <shadow type="text" id="wbkcO}urKM4**L5[9oG,">
+                                    <field name="TEXT">abc</field>
+                                  </shadow>
+                                  <block type="s4d_message_content" id="sO}l#RoMemb3y/ha=`v*"></block>
+                                </value>
+                              </block>
+                            </value>
+                          </block>
+                        </value>
+                        <next>
+                          <block type="s4d_send_channel" id="oOmxKY(iHdd^F:fZw4T=">
+                            <value name="CONTENT">
+                              <block type="text_join" id="/#zQ:#ccvTiDB;QTA.=*">
+                                <mutation items="4"></mutation>
+                                <value name="ADD0">
+                                  <block type="text" id="n?Yu-icn~uq7|!4,SlO(">
+                                    <field name="TEXT">&lt;@&amp;1003588497690603600&gt; </field>
+                                  </block>
+                                </value>
+                                <value name="ADD1">
+                                  <block type="variables_get" id=";!2?BS,l{M5:,tf:HGvl">
+                                    <field name="VAR" id="374@x`Ie9EFQj%48l#Jg">user</field>
+                                  </block>
+                                </value>
+                                <value name="ADD2">
+                                  <block type="text" id="/)r2^8Va|xKQ5{6jrEiy">
+                                    <field name="TEXT"> ha richiesto: </field>
+                                  </block>
+                                </value>
+                                <value name="ADD3">
+                                  <block type="variables_get" id="%h-*Q)eY5m47pD#t,)b=">
+                                    <field name="VAR" id="HSc[:CIC:cKz:b%-Am3L">materiale</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <value name="CHANNEL">
+                              <block type="s4d_get_channel" id="Y2yk;EmhZdBE)/m;z|=o">
+                                <field name="SEARCH_TYPE">ID</field>
+                                <value name="VALUE">
+                                  <block type="text" id="a:pqKR`,ve@SJ`9l10MP">
+                                    <field name="TEXT">1003589108641312768</field>
+                                  </block>
+                                </value>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="s4d_wait_seconds" id="o`uEh@W.rWi}wdG4fN6*">
+                                <value name="TIME">
+                                  <shadow type="math_number" id="CzQdu4T]?I19hFs:x(=T">
+                                    <field name="NUM">60</field>
+                                  </shadow>
+                                </value>
+                                <next>
+                                  <block type="s4d_delete" id="9Ez1R1*pn]Qg[6rR,:sd"></block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
+              </block>
+            </statement>
+          </block>
+        </statement>
+      </block>
+    </statement>
+  </block>
+  <block type="s4d_on_connected" id="c{WG![H6KsxHPQ$hM:3w" x="1586" y="581">
+    <statement name="STATEMENTS">
+      <block type="s4d_set_bot_game" id="Gm[Zjk*uXrRES]mQ52M2">
+        <value name="GAME">
+          <block type="text" id="k11h()iV?O=e8lZk7Ft,">
+            <field name="TEXT">raccogliere i vostri materiali</field>
+          </block>
+        </value>
+      </block>
+    </statement>
+  </block>
+</xml>
